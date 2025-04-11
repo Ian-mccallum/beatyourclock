@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Beat the Clock</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="static-header">
+        <div class="header-left">
+            <div class="header-logo">
+                <img src="logo.png" alt="Beat the Clock Logo">
+            </div>
+            <h2 class="header-title">Beat the Clock</h2>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-container">
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <a href="contact.html" class="cta-button">Get Started</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <h1>Get in Touch</h1>
+            <p>Ready to transform your business with automation? We're here to help!</p>
+        </section>
+
+        <section class="contact-options">
+            <div class="contact-container">
+                <h2>How Would You Like to Connect?</h2>
+                
+                <div class="options-grid">
+                    <div class="option-card">
+                        <h3>Schedule a Free Discovery Call</h3>
+                        <p>Book a 30-minute consultation to discuss your automation needs and how we can help your business save time.</p>
+                        <a href="#calendar-section" class="option-button">Choose a Time</a>
+                    </div>
+                    
+                    <div class="option-card">
+                        <h3>Send Us a Message</h3>
+                        <p>Have questions or specific requirements? Fill out our contact form and we'll get back to you within 24 hours.</p>
+                        <a href="#contact-form" class="option-button">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="calendar-section" class="calendar-section">
+            <div class="contact-container">
+                <h2>Schedule Your Discovery Call</h2>
+                <p class="section-intro">Select a date and time that works for you:</p>
+                
+                <div class="calendly-wrapper">
+                    <!-- Calendly inline widget begin -->
+                    <div id="calendly-embed" style="min-width:320px;height:630px;">
+                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+                        <script type="text/javascript">
+                            Calendly.initInlineWidget({
+                                url: 'https://calendly.com/beattheclockai/30min?month=2025-04',
+                                parentElement: document.getElementById('calendly-embed'),
+                                prefill: {},
+                                utm: {}
+                            });
+                        </script>
+                    </div>
+                    <!-- Calendly inline widget end -->
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-form" class="contact-form-section">
+            <div class="contact-container">
+                <h2>Send Us a Message</h2>
+                <p class="section-intro">We'll get back to you within 24 hours</p>
+                
+                <div class="form-and-info">
+                    <div class="contact-form-wrapper">
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone (optional)</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="interest">I'm interested in:</label>
+                                <select id="interest" name="interest">
+                                    <option value="">Select an option</option>
+                                    <option value="email-automation">Email Automation</option>
+                                    <option value="crm-integration">CRM Integration</option>
+                                    <option value="appointment-scheduling">Appointment Scheduling</option>
+                                    <option value="customer-feedback">Customer Feedback Collection</option>
+                                    <option value="lead-scraper">Lead Scraper & Hiring Outreach</option>
+                                    <option value="other">Something Else</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-button">Send Message</button>
+                        </form>
+                    </div>
+
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <h3>Email Us</h3>
+                            <p><a href="mailto:contact@beatyourclock.com">contact@beatyourclock.com</a></p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Call Us</h3>
+                            <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Business Hours</h3>
+                            <p>Monday - Friday: 9:00 AM - 5:00 PM EST</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Website powered by <a href="https://ianinnovates.com" target="_blank">Ianinnovates</a></p>
+        <p class="copyright">&copy; 2025 Beat the Clock Automation Agency | DuPage County, IL | All rights reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
