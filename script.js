@@ -1,19 +1,74 @@
 // Mobile menu functionality
 const menuToggle = document.querySelector('.menu-toggle');
 const navContainer = document.querySelector('.nav-container');
+const mainNav = document.querySelector('.main-nav');
 
-menuToggle.addEventListener('click', () => {
+// Create hamburger menu spans if they don't exist
+if (menuToggle && !menuToggle.querySelector('span')) {
+    for (let i = 0; i < 3; i++) {
+        const span = document.createElement('span');
+        menuToggle.appendChild(span);
+    }
+}
+
+// Toggle menu function
+function toggleMenu() {
     menuToggle.classList.toggle('active');
     navContainer.classList.toggle('active');
-    document.body.style.overflow = navContainer.classList.contains('active') ? 'hidden' : '';
+    document.body.classList.toggle('menu-open');
+}
+
+// Event listeners for menu toggle
+menuToggle.addEventListener('click', toggleMenu);
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (navContainer.classList.contains('active') && 
+        !navContainer.contains(e.target) && 
+        !menuToggle.contains(e.target)) {
+        toggleMenu();
+    }
 });
 
 // Close menu when clicking a link
 document.querySelectorAll('.main-nav a, .cta-button').forEach(link => {
     link.addEventListener('click', () => {
-        menuToggle.classList.remove('active');
-        navContainer.classList.remove('active');
-        document.body.style.overflow = '';
+        if (navContainer.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+});
+
+// Smooth scroll for mobile menu links
+document.querySelectorAll('.main-nav a, .cta-button').forEach(link => {
+    link.addEventListener('click', (e) => {
+        if (navContainer.classList.contains('active')) {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                toggleMenu();
+                
+                setTimeout(() => {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }, 300);
+            }
+        }
+    });
+});
+
+// Add touch feedback for mobile menu items
+document.querySelectorAll('.main-nav a').forEach(link => {
+    link.addEventListener('touchstart', () => {
+        link.style.opacity = '0.7';
+    });
+    
+    link.addEventListener('touchend', () => {
+        link.style.opacity = '1';
     });
 });
 
