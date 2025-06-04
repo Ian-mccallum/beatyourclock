@@ -3,4 +3,4 @@ Allow: /
 Disallow: /private/
 Disallow: /admin/
 
-Sitemap: https://beattheclock.com/sitemap.xml 
+Sitemap: https://www.beatyourclock.com/sitemap.xml 
